@@ -1,0 +1,46 @@
+package org.firstinspires.ftc.teamcode.TeleOp.Tests;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import org.firstinspires.ftc.teamcode.subsystems.Drive;
+import org.firstinspires.ftc.teamcode.subsystems.Intake;
+
+
+
+@TeleOp(name="DriveTest", group="TeleOpMode")
+public class DriveTest extends LinearOpMode {
+
+
+    private Drive drive;
+    private Intake intake;
+
+
+    @Override
+    public void runOpMode() {
+        intake = new Intake(hardwareMap, telemetry);
+        drive = new Drive(hardwareMap, telemetry);
+
+        waitForStart();
+        while (opModeIsActive()) {
+            drive.run(-gamepad1.left_stick_x, gamepad1.left_stick_y, -gamepad1.right_stick_x ,gamepad1.right_bumper, -gamepad2.right_stick_x);
+            intake.run( gamepad1.a,gamepad1.b,gamepad1.x);
+            intake.sendTelemetry();
+            drive.sendTelemetry();
+            telemetry.update();
+            //intake = new Intake(hardwareMap, telemetry);
+
+        //waitForStart();z
+        //while (opModeIsActive()) {
+               // intake.run( gamepad1.a,gamepad1.b);
+              //  intake.sendTelemetry();
+            //   telemetry.update();
+            }
+        }
+    }
+
+
+hj o joão pedro pediu para o frank estar funcionando e com o sistema de cuspir bolinhas
+essa foi a programação que ficou quando a laura mandou eu quarda o notebook(ela achando que manda em mim)e
+ta praticamente tudo pronto exeto o robo cuspir bolinha que eu não faço ideia do qual é o erro
+e tambem tem a curva do robo que esta invertido
+hj tambem gravamos um video para o instagram, eu so apareci no final do video e falei"essa é a riverpollo"
